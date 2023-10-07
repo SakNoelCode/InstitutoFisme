@@ -106,7 +106,7 @@
                                     <div class="w-full">
                                         <div>
                                             <div class="mb-7">
-                                                <img src="images/testimonials/testimonial-01/lineicon.svg" alt="lineicon" />
+                                                <img src="images/logo/logoFisme.svg" alt="lineicon" />
                                             </div>
                                             <p class="mb-2 text-base font-medium italic text-body-color sm:text-lg">
                                                 Si estás buscando un entorno donde la tecnología y la investigación se

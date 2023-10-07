@@ -8,9 +8,12 @@
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4 sm:w-2/3 lg:w-4/12">
                     <div class="mb-10 w-full">
-                        <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
-                            <img src="images/logo/logo.svg" alt="logo" class="max-w-full" />
-                        </a>
+                        <div class="w-1/2">
+                            <a href="javascript:void(0)" class="block w-full py-5">
+                                <img src="/images/logo/logoFisme.svg" alt="logo" class="w-full" />
+                            </a>
+                        </div>
+
                         <p class="mb-7 text-base text-body-color">
                             Instituto de
                             Investigación en Tecnología
@@ -98,7 +101,7 @@
                                     Ríos Campos
                                 </a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>

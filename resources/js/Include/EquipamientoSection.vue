@@ -25,7 +25,7 @@
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">
                         <div class="overflow-hidden rounded-lg">
-                            <img src="images/portfolio/portfolio-01/image-01.jpg" alt="portfolio" class="w-full" />
+                            <img src="images/portfolio/portfolio-01/equi_1.jpg" alt="portfolio" class="w-full" />
                         </div>
                         <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                             <span class="mb-2 block text-sm font-semibold text-primary">
@@ -44,7 +44,7 @@
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">
                         <div class="overflow-hidden rounded-lg">
-                            <img src="images/portfolio/portfolio-01/image-02.jpg" alt="portfolio" class="w-full" />
+                            <img src="images/portfolio/portfolio-01/equi_2.jpeg" alt="portfolio" class="w-full" />
                         </div>
                         <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                             <span class="mb-2 block text-sm font-semibold text-primary">
@@ -63,7 +63,7 @@
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">
                         <div class="overflow-hidden rounded-lg">
-                            <img src="images/portfolio/portfolio-01/image-03.jpg" alt="portfolio" class="w-full" />
+                            <img src="images/portfolio/portfolio-01/equi_3.jpg" alt="portfolio" class="w-full" />
                         </div>
                         <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                             <span class="mb-2 block text-sm font-semibold text-primary">
@@ -82,7 +82,7 @@
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">
                         <div class="overflow-hidden rounded-lg">
-                            <img src="images/portfolio/portfolio-01/image-04.jpg" alt="portfolio" class="w-full" />
+                            <img src="images/portfolio/portfolio-01/equi_4.jpg" alt="portfolio" class="w-full" />
                         </div>
                         <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                             <span class="mb-2 block text-sm font-semibold text-primary">
@@ -101,7 +101,7 @@
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">
                         <div class="overflow-hidden rounded-lg">
-                            <img src="images/portfolio/portfolio-01/image-05.jpg" alt="portfolio" class="w-full" />
+                            <img src="images/portfolio/portfolio-01/equi_5.jpg" alt="portfolio" class="w-full" />
                         </div>
                         <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                             <span class="mb-2 block text-sm font-semibold text-primary">
@@ -120,7 +120,7 @@
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">
                         <div class="overflow-hidden rounded-lg">
-                            <img src="images/portfolio/portfolio-01/image-06.jpg" alt="portfolio" class="w-full" />
+                            <img src="images/portfolio/portfolio-01/equi_6.jpg" alt="portfolio" class="w-full" />
                         </div>
                         <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                             <span class="mb-2 block text-sm font-semibold text-primary">

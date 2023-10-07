@@ -3,22 +3,22 @@
 
 <template>
     <!-- ====== Services Section Start -->
-    <section class="overflow-hidden pt-20 lg:pt-[100px]">
+    <section class="overflow-hidden pt-20 lg:pt-[100px]" id="presentacion">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap items-center justify-between">
                 <div class="w-full px-4 lg:w-6/12">
                     <div class="-mx-3 flex items-center sm:-mx-4">
                         <div class="w-full px-3 sm:px-4 xl:w-1/2">
                             <div class="py-3 sm:py-4">
-                                <img src="images/about/image-1.jpg" alt="" class="w-full rounded-2xl" />
+                                <img src="images/about/about-1.png" alt="" class="w-full rounded-2xl" />
                             </div>
                             <div class="py-3 sm:py-4">
-                                <img src="images/about/image-2.jpg" alt="" class="w-full rounded-2xl" />
+                                <img src="images/about/about-2.png" alt="" class="w-full rounded-2xl" />
                             </div>
                         </div>
                         <div class="w-full px-3 sm:px-4 xl:w-1/2">
                             <div class="relative z-10 my-4">
-                                <img src="images/about/image-3.jpg" alt="" class="w-full rounded-2xl" />
+                                <img src="images/about/about-3.png" alt="" class="w-full rounded-2xl" />
                                 <span class="absolute -right-7 -bottom-7 z-[-1]">
                                     <svg width="134" height="106" viewBox="0 0 134 106" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -197,15 +197,16 @@
                             ¡Bienvenidos a la Universidad Nacional Toribio Rodríguez de Mendoza!
                         </h2>
                         <p class="mb-8 text-base text-body-color">
-                            Te presentamos con orgullo nuestro Instituto de Investigación en Tecnología de Información y Comunicación (IITC).
+                            Te presentamos con orgullo nuestro Instituto de Investigación en Tecnología de Información y
+                            Comunicación (IITC).
                         </p>
                         <p class="mb-12 text-base text-body-color">
-                            Imagina sumergirte en mundos virtuales con nuestros lentes de realidad virtual, 
-                            explorar horizontes desconocidos con drones de última generación, 
-                            capturar la realidad con precisión utilizando avanzados escáneres y 
-                            dar forma a tus ideas con impresoras 3D de vanguardia. Y eso no es todo, 
-                            también contamos con los versátiles dispositivos Arduino, estimulando tu 
-                            creatividad y habilidades prácticas. 
+                            Imagina sumergirte en mundos virtuales con nuestros lentes de realidad virtual,
+                            explorar horizontes desconocidos con drones de última generación,
+                            capturar la realidad con precisión utilizando avanzados escáneres y
+                            dar forma a tus ideas con impresoras 3D de vanguardia. Y eso no es todo,
+                            también contamos con los versátiles dispositivos Arduino, estimulando tu
+                            creatividad y habilidades prácticas.
                         </p>
                         <a href="javascript:void(0)"
                             class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-10 text-center text-base font-normal text-white hover:bg-opacity-90 lg:px-8 xl:px-10">

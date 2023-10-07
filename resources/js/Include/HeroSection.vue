@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="relative bg-white pt-[100px] lg:pt-[100px]">
+    <div class="relative bg-white pt-[100px] lg:pt-[100px]" id="heroSection">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4 lg:w-5/12">
@@ -46,14 +46,14 @@
                             </h6>
                             <div class="flex items-center">
                                 <div class="mr-4 w-full py-3">
-                                    <img src="images/brands/ayroui.svg" alt="ayroui" />
+                                    <img src="images/brands/untrm.svg" alt="ayroui" />
                                 </div>
                                 <div class="mr-4 w-full py-3">
-                                    <img src="images/brands/graygrids.svg" alt="graygrids" />
+                                    <img src="images/brands/fisme.svg" alt="graygrids" />
                                 </div>
-                                <div class="mr-4 w-full py-3">
+                                <!--div class="mr-4 w-full py-3">
                                     <img src="images/brands/uideck.svg" alt="uideck" />
-                                </div>
+                                </div--->
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                 <div class="w-full px-4 lg:w-6/12">
                     <div class="lg:ml-auto lg:text-right">
                         <div class="relative z-10 inline-block pt-11 lg:pt-0">
-                            <img src="images/hero/hero-image-01.png" alt="hero" class="max-w-full lg:ml-auto" />
+                            <img src="images/hero/hero_1.png" alt="hero" class="max-w-full lg:ml-auto" />
                             <span class="absolute -left-8 -bottom-8 z-[-1]">
                                 <svg width="93" height="93" viewBox="0 0 93 93" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
