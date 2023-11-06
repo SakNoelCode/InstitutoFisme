@@ -19,14 +19,14 @@ const toogleDropDown = () => {
     <aside class="aside is-placed-left is-expanded">
         <div class="aside-tools">
             <div>
-                Admin <b class="font-black">One</b>
+                Panel de <b class="font-black">Administración</b>
             </div>
         </div>
         <div class="menu is-menu-main">
             <p class="menu-label">General</p>
             <ul class="menu-list">
                 <li class="--set-active-index-html">
-                    <a href="index.html">
+                    <a href="#">
                         <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
                         <span class="menu-item-label">Dashboard</span>
                     </a>
@@ -35,7 +35,7 @@ const toogleDropDown = () => {
             <p class="menu-label">Examples</p>
             <ul class="menu-list">
                 <li class="--set-active-tables-html">
-                    <a href="tables.html">
+                    <a href="#">
                         <span class="icon"><i class="mdi mdi-table"></i></span>
                         <span class="menu-item-label">Tables</span>
                     </a>

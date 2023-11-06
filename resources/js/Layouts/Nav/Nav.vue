@@ -1,4 +1,6 @@
 <script setup>
+import { router } from '@inertiajs/vue3';
+
 const toogleDropDown = () => {
     const dropdown = event.currentTarget;
 
@@ -12,27 +14,56 @@ const toogleDropDown = () => {
         dropdownIcon.classList.toggle('mdi-minus');
     }
 }
+
+const toogleMobileAside = () => {
+    const dropdownIcon = document.getElementById('icon-aside');
+
+    document.documentElement.classList.toggle('aside-mobile-expanded');
+    dropdownIcon.classList.toggle('mdi-forwardburger');
+    dropdownIcon.classList.toggle('mdi-backburger');
+}
+
+const ToogleMenuMobile = (event) => {
+    const dropdownIcon = event.currentTarget.querySelector('.icon .mdi');
+
+    const targetId = event.currentTarget.getAttribute('data-target');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+        targetElement.classList.toggle('active');
+    }
+
+    if (dropdownIcon) {
+        dropdownIcon.classList.toggle('mdi-dots-vertical');
+        dropdownIcon.classList.toggle('mdi-close');
+    }
+}
+
+const logout = () => {
+    router.post(route('logout'));
+};
+
 </script>
 
 <template>
     <nav id="navbar-main" class="navbar is-fixed-top">
         <div class="navbar-brand">
-            <a class="navbar-item mobile-aside-button">
-                <span class="icon"><i class="mdi mdi-forwardburger mdi-24px"></i></span>
+            <a class="navbar-item mobile-aside-button" @click="toogleMobileAside">
+                <span class="icon"><i id="icon-aside" class="mdi mdi-forwardburger mdi-24px"></i></span>
             </a>
             <div class="navbar-item">
-                <div class="control"><input placeholder="Search everywhere..." class="input"></div>
+                <div class="control"><input placeholder="Buscar....." class="input"></div>
             </div>
         </div>
         <div class="navbar-brand is-right">
-            <a class="navbar-item --jb-navbar-menu-toggle" data-target="navbar-menu">
+            <a class="navbar-item --jb-navbar-menu-toggle" data-target="navbar-menu" @click="ToogleMenuMobile">
                 <span class="icon"><i class="mdi mdi-dots-vertical mdi-24px"></i></span>
             </a>
         </div>
         <div class="navbar-menu" id="navbar-menu">
             <div class="navbar-end">
 
-                <div class="navbar-item dropdown has-divider" @click="toogleDropDown">
+                <!--div class="navbar-item dropdown has-divider" @click="toogleDropDown">
 
                     <a class="navbar-link">
                         <span class="icon"><i class="mdi mdi-menu"></i></span>
@@ -60,23 +91,23 @@ const toogleDropDown = () => {
                             <span>Log Out</span>
                         </a>
                     </div>
-                </div>
+                </div--->
 
                 <div class="navbar-item dropdown has-divider has-user-avatar" @click="toogleDropDown">
                     <a class="navbar-link">
                         <div class="user-avatar">
-                            <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe"
+                            <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="Imagen del usuario"
                                 class="rounded-full">
                         </div>
-                        <div class="is-user-name"><span>John Doe</span></div>
+                        <div class="is-user-name"><span>{{ $page.props.auth.user.name }}</span></div>
                         <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
                     </a>
                     <div class="navbar-dropdown">
-                        <a href="profile.html" class="navbar-item --set-active-profile-html">
+                        <a :href="route('profile.show')" class="navbar-item --set-active-profile-html">
                             <span class="icon"><i class="mdi mdi-account"></i></span>
-                            <span>My Profile</span>
+                            <span>Mi perfil</span>
                         </a>
-                        <a class="navbar-item">
+                        <!--a class="navbar-item">
                             <span class="icon"><i class="mdi mdi-settings"></i></span>
                             <span>Settings</span>
                         </a>
@@ -87,22 +118,23 @@ const toogleDropDown = () => {
                         <hr class="navbar-divider">
                         <a class="navbar-item">
                             <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Log Out</span>
-                        </a>
+                            <span>Cerrar sesión</span>
+                        </a----->
                     </div>
                 </div>
-                <a href="https://justboil.me/tailwind-admin-templates/free-dashboard/"
-                    class="navbar-item has-divider desktop-icon-only">
+                <a href="#" class="navbar-item has-divider desktop-icon-only">
                     <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
                     <span>About</span>
                 </a>
-                <a href="https://github.com/justboil/admin-one-tailwind" class="navbar-item has-divider desktop-icon-only">
+                <!---a href="https://github.com/justboil/admin-one-tailwind" class="navbar-item has-divider desktop-icon-only">
                     <span class="icon"><i class="mdi mdi-github-circle"></i></span>
                     <span>GitHub</span>
-                </a>
-                <a title="Log out" class="navbar-item desktop-icon-only">
-                    <span class="icon"><i class="mdi mdi-logout"></i></span>
-                    <span>Log out</span>
+                </a--->
+                <a title="Cerrar sesión" class="navbar-item desktop-icon-only cursor-pointer">
+                    <form @submit.prevent="logout" method="POST">
+                        <span class="icon"><i class="mdi mdi-logout"></i></span>
+                        <span>Cerrar sesión</span>
+                    </form>
                 </a>
             </div>
         </div>
