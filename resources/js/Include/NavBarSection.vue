@@ -1,11 +1,9 @@
-<script>
-export default {
-    data() {
-        return {
-            navbarOpen: false
-        };
-    }
-};
+<script setup>
+import { Link } from '@inertiajs/vue3'
+import { ref } from 'vue'
+
+let navbarOpen = ref(false)
+
 </script>
 
 <template>
@@ -14,9 +12,9 @@ export default {
         <div class="container mx-auto">
             <div class="relative -mx-4 flex items-center justify-between">
                 <div class="w-60 max-w-full px-4">
-                    <a href="javascript:void(0)" class="block w-full py-5">
-                        <img src="/images/logo/logoFisme.svg" alt="logo" class="w-full" />
-                    </a>
+                    <Link href="/" class="block w-full py-5">
+                    <img src="/images/logo/logoFisme.svg" alt="logo" class="w-full" />
+                    </Link>
                 </div>
                 <div class="flex w-full items-center justify-between px-4">
                     <div>
@@ -67,10 +65,10 @@ export default {
                         <!--a href="javascript:void(0)" class="py-3 px-7 text-base font-medium text-dark hover:text-primary">
                             Login
                         </a--->
-                        <a href="javascript:void(0)"
+                        <Link :href="route('login')"
                             class="rounded-lg bg-primary py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
-                            Iniciar sesión
-                        </a>
+                        Iniciar sesión
+                        </Link>
                     </div>
                 </div>
             </div>

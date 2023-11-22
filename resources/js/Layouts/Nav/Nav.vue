@@ -1,5 +1,5 @@
 <script setup>
-import { router } from '@inertiajs/vue3';
+import { router,Link } from '@inertiajs/vue3';
 
 const toogleDropDown = () => {
     const dropdown = event.currentTarget;
@@ -38,10 +38,6 @@ const ToogleMenuMobile = (event) => {
         dropdownIcon.classList.toggle('mdi-close');
     }
 }
-
-const logout = () => {
-    router.post(route('logout'));
-};
 
 </script>
 
@@ -131,10 +127,10 @@ const logout = () => {
                     <span>GitHub</span>
                 </a--->
                 <a title="Cerrar sesión" class="navbar-item desktop-icon-only cursor-pointer">
-                    <form @submit.prevent="logout" method="POST">
+                    <Link :href="route('logout')" as="button" method="post">
                         <span class="icon"><i class="mdi mdi-logout"></i></span>
                         <span>Cerrar sesión</span>
-                    </form>
+                    </Link>
                 </a>
             </div>
         </div>

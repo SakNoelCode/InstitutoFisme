@@ -1,5 +1,7 @@
 <script setup>
 
+import { Link } from '@inertiajs/vue3';
+
 const toogleDropDown = () => {
     const dropdown = event.currentTarget;
 
@@ -26,21 +28,21 @@ const toogleDropDown = () => {
             <p class="menu-label">General</p>
             <ul class="menu-list">
                 <li class="--set-active-index-html">
-                    <a href="#">
+                    <Link :href="route('dashboard')">
                         <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
                         <span class="menu-item-label">Dashboard</span>
-                    </a>
+                    </Link>
                 </li>
             </ul>
-            <p class="menu-label">Examples</p>
+            <p class="menu-label">Módulos</p>
             <ul class="menu-list">
                 <li class="--set-active-tables-html">
-                    <a href="#">
-                        <span class="icon"><i class="mdi mdi-table"></i></span>
-                        <span class="menu-item-label">Tables</span>
-                    </a>
+                    <Link :href="route('posts.index')"> 
+                        <span class="icon"><span class="mdi mdi-post"></span></span>
+                        <span class="menu-item-label">Posts</span>
+                    </Link>
                 </li>
-                <li class="--set-active-forms-html">
+                <!--li class="--set-active-forms-html">
                     <a href="forms.html">
                         <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>
                         <span class="menu-item-label">Forms</span>
@@ -76,14 +78,20 @@ const toogleDropDown = () => {
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li--->
             </ul>
-            <p class="menu-label">About</p>
+            <p class="menu-label">Acerca de</p>
             <ul class="menu-list">
                 <li>
+                    <a href="#" class="has-icon">
+                        <span class="icon"><i class="mdi mdi-help-circle"></i></span>
+                        <span class="menu-item-label">FAQ</span>
+                    </a>
+                </li>
+                <!--li>
                     <a href="https://justboil.me/tailwind-admin-templates/free-dashboard/" class="has-icon">
                         <span class="icon"><i class="mdi mdi-help-circle"></i></span>
-                        <span class="menu-item-label">About</span>
+                        <span class="menu-item-label">FAQ</span>
                     </a>
                 </li>
                 <li>
@@ -91,7 +99,7 @@ const toogleDropDown = () => {
                         <span class="icon"><i class="mdi mdi-github-circle"></i></span>
                         <span class="menu-item-label">GitHub</span>
                     </a>
-                </li>
+                </li--->
             </ul>
         </div>
     </aside>
