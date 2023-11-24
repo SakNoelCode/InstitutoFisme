@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import { ref } from 'vue'
+import NavLink from '@/Components/Inicio/NavLink.vue';
 
 let navbarOpen = ref(false)
 
@@ -29,34 +30,34 @@ let navbarOpen = ref(false)
                             class="absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 px-6 shadow transition-all lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none">
                             <ul class="block lg:flex">
                                 <li>
-                                    <a href="#heroSection"
-                                        class="flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex">
+                                    <NavLink :active="route().current('inicio.welcome')" :href="route('inicio.welcome')">
                                         Inicio
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <a href="#presentacion"
-                                        class="flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex smooth-scroll">
-                                        Presentación
-                                    </a>
+                                    <NavLink :active="route().current('inicio.nosotros')" :href="route('inicio.nosotros')">
+                                        Nosotros
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"
-                                        class="flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex">
-                                        Noticias
-                                    </a>
+                                    <NavLink :active="route().current('inicio.noticias')" :href="route('inicio.noticias')">
+                                        Blog
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)"
-                                        class="flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex">
-                                        Cursos
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"
-                                        class="flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex">
+                                    <NavLink :active="route().current('inicio.equipamiento')" :href="route('inicio.equipamiento')">
                                         Equipamiento
-                                    </a>
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink :active="route().current('inicio.cursos')" :href="route('inicio.cursos')">
+                                        Cursos
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink :active="route().current('inicio.egresados')" :href="route('inicio.egresados')">
+                                        Egresados
+                                    </NavLink>
                                 </li>
                             </ul>
                         </nav>

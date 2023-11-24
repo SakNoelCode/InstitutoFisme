@@ -3,11 +3,11 @@
 
 <template>
     <!-- ====== Pricing Section Start -->
-    <section class="relative z-20 overflow-hidden bg-white pt-20 lg:pt-[180px]">
+    <section class="relative z-20 overflow-hidden bg-white pt-20 lg:pt-[100px]">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4">
-                    <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
+                    <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-5">
                         <span class="mb-2 block text-lg font-semibold text-primary">
                             Nuestras metas
                         </span>

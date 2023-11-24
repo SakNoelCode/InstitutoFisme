@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Footer Section Start -->
-    <footer class="relative z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+    <footer class="relative z-10 bg-white pt-20 pb-5 lg:pt-[100px] lg:pb-5">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4 sm:w-2/3 lg:w-4/12">

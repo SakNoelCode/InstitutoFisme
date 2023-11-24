@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Team Section Start -->
-    <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+    <section class="pt-20 pb-10 lg:pt-[120px] lg:pb-5">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4">
@@ -15,7 +15,7 @@
                             Nuestros estudiantes que fueron capacitados
                         </h2>
                         <p class="text-base text-body-color">
-                            Estos son algunos de nuestros estudiantes que lograron formarse exitosamente.
+                            Estos son algunos de nuestros estudiantes y docentes que lograron formarse exitosamente.
                         </p>
                     </div>
                 </div>

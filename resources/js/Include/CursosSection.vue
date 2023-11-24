@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Cards Section Start -->
-    <section class="bg-[#F3F4F6] pt-20 pb-10 lg:pt-[100px] lg:pb-20">
+    <section class="pt-20 lg:pt-[100px]">
         <div class="container mx-auto">
 
             <div class="-mx-4 flex flex-wrap">
@@ -24,7 +24,7 @@
 
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden rounded-lg bg-white">
+                    <div class="overflow-hidden rounded-lg bg-white">
                         <img src="images/cards/card-01/image-01.jpg" alt="image" class="w-full" />
                         <div class="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                             <h3>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden rounded-lg bg-white">
+                    <div class="overflow-hidden rounded-lg bg-white">
                         <img src="images/cards/card-01/image-02.jpg" alt="image" class="w-full" />
                         <div class="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                             <h3>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 xl:w-1/3">
-                    <div class="mb-10 overflow-hidden rounded-lg bg-white">
+                    <div class="overflow-hidden rounded-lg bg-white">
                         <img src="images/cards/card-01/image-03.jpg" alt="image" class="w-full" />
                         <div class="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                             <h3>

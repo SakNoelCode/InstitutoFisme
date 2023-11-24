@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Testimonials Section Start -->
-    <section class="pt-20 lg:pt-[150px]">
+    <section class="pt-20 lg:pt-[100px]">
         <div class="container mx-auto">
             <div>
                 <div class="relative flex justify-center">
@@ -15,7 +15,7 @@
                                 <div class="w-full items-center md:flex">
                                     <div
                                         class="relative mb-12 w-full max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
-                                        <img src="images/testimonials/testimonial-01/image-01.jpg" alt="image"
+                                        <img src="images/testimonials/testimonial-01/image-02.jpeg" alt="image"
                                             class="w-full" />
                                         <span class="absolute -top-6 -left-6 z-[-1] hidden sm:block">
                                             <svg width="77" height="77" viewBox="0 0 77 77" fill="none"

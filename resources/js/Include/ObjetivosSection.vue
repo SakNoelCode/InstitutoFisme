@@ -3,11 +3,11 @@
 
 <template>
     <!-- ====== Services Section Start -->
-    <section class="pt-20 lg:pt-[120px]">
+    <section class="pt-20 lg:pt-[100px]">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4">
-                    <div class="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
+                    <div class="mx-auto mb-12 max-w-[510px] text-center lg:mb-5">
                         <span class="mb-2 block text-lg font-semibold text-primary">
                             Nuestros objetivos
                         </span>
