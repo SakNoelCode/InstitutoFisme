@@ -20,6 +20,7 @@ use Inertia\Inertia;
 Route::get('/', [welcomeController::class, 'showWelcome'])->name('inicio.welcome');
 Route::get('/nosotros',[welcomeController::class,'showNosotros'])->name('inicio.nosotros');
 Route::get('/blog',[welcomeController::class,'showNoticias'])->name('inicio.noticias');
+Route::get('/blog/{post}',[welcomeController::class,'showDetalleNoticia'])->name('inicio.detalleNoticia');
 Route::get('/equipamiento',[welcomeController::class,'showEquipamiento'])->name('inicio.equipamiento');
 Route::get('/cursos',[welcomeController::class,'showCursos'])->name('inicio.cursos');
 Route::get('/egresados',[welcomeController::class,'showEgresados'])->name('inicio.egresados');
