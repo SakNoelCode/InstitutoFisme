@@ -1,5 +1,5 @@
 <script setup>
-import { router,Link } from '@inertiajs/vue3';
+import { router, Link } from '@inertiajs/vue3';
 
 const toogleDropDown = () => {
     const dropdown = event.currentTarget;
@@ -92,8 +92,13 @@ const ToogleMenuMobile = (event) => {
                 <div class="navbar-item dropdown has-divider has-user-avatar" @click="toogleDropDown">
                     <a class="navbar-link">
                         <div class="user-avatar">
-                            <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="Imagen del usuario"
-                                class="rounded-full">
+                            <!---img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="Imagen del usuario"
+                                class="rounded-full"---->
+                            <svg class="w-4 h-4 text-gray-800 mt-1 ml-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 18">
+                                <path
+                                    d="M7 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm2 1H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                            </svg>
                         </div>
                         <div class="is-user-name"><span>{{ $page.props.auth.user.name }}</span></div>
                         <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
@@ -128,8 +133,8 @@ const ToogleMenuMobile = (event) => {
                 </a--->
                 <a title="Cerrar sesión" class="navbar-item desktop-icon-only cursor-pointer">
                     <Link :href="route('logout')" as="button" method="post">
-                        <span class="icon"><i class="mdi mdi-logout"></i></span>
-                        <span>Cerrar sesión</span>
+                    <span class="icon"><i class="mdi mdi-logout"></i></span>
+                    <span>Cerrar sesión</span>
                     </Link>
                 </a>
             </div>

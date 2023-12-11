@@ -1,7 +1,8 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import { Link, useForm } from '@inertiajs/vue3';
+import { useForm } from '@inertiajs/vue3';
 import InputError from '@/Components/InputError.vue';
+import HeaderSection from '@/Components/HeaderSection.vue';
 import { ref, onMounted } from 'vue';
 
 //Props
@@ -37,7 +38,7 @@ const submit = () => {
         form.img_path = photoInput.value.files[0];
     }
 
-    form.post(route('posts.update',props.post.id));
+    form.post(route('posts.update', props.post.id));
 }
 
 const seleccionaImg = () => {
@@ -60,18 +61,11 @@ const seleccionaImg = () => {
 <template>
     <AppLayout title="Crear Post">
 
-        <section class="is-title-bar">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-                <ul>
-                    <li>Posts</li>
-                    <li>Editar post</li>
-                </ul>
-                <Link :href="route('posts.index')" class="button blue">
-                <span class="mdi mdi-arrow-left"></span>
-                <span>Volver</span>
-                </Link>
-            </div>
-        </section>
+        <HeaderSection :icon="'mdi mdi-arrow-left'" :text-icon="'Volver'" :href-icon="route('posts.index')">
+            <li>Posts</li>
+            <li>Editar post</li>
+        </HeaderSection>
+
 
         <section class="section main-section">
 

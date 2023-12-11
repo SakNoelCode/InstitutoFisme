@@ -1,67 +1,40 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
+import NotificationSuccess from '@/Components/NotificationSuccess.vue';
+import NotificationFail from '@/Components/NotificationFaill.vue';
+import Pagination from '@/Components/Pagination.vue';
+import HeaderSection from '@/Components/HeaderSection.vue';
+import EmptyTable from '@/Components/EmptyTable.vue';
+
 
 const props = defineProps({
-    posts: Array
+    posts: Object
 });
-
-const setupNotificationDismiss = () => {
-    const notificationElement = event.currentTarget.closest('.notification');
-    if (notificationElement) {
-        notificationElement.classList.add('hidden');
-    }
-}
-
 
 </script>
 
 <template>
     <AppLayout title="Posts">
 
-        <section class="is-title-bar">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
-                <ul>
-                    <li>Posts</li>
-                    <!---li>Panel</li--->
-                </ul>
-                <Link :href="route('posts.create')" class="button blue">
-                <span class="icon"><span class="mdi mdi-pencil"></span></span>
-                <span>Crear nuevo post</span>
-                </Link>
-            </div>
-        </section>
+        <!----Header section-->
+        <HeaderSection :icon="'mdi mdi-pencil'" :textIcon="'Crear nuevo post'" :hrefIcon="route('posts.create')">
+            <li>Posts</li>
+        </HeaderSection>
 
-        <!---Tabla posts-->
+
+
+        <!---Section content-->
         <section class="section main-section">
 
             <!---Notificacion Success-->
-            <div class="notification blue" v-if="$page.props.flash.message">
-                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-                    <div>
-                        <span class="icon"><i class="mdi mdi-buffer"></i></span>
-                        <b>{{ $page.props.flash.message }}</b>
-                    </div>
-                    <button @click="setupNotificationDismiss()" type="button"
-                        class="button small textual --jb-notification-dismiss bg-white">Cerrar</button>
-                </div>
-            </div>
+            <NotificationSuccess :message="$page.props.flash.message" />
 
             <!---Notificacion Fail-->
-            <!--div class="notification red">
-                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
-                    <div>
-                        <span class="icon"><i class="mdi mdi-buffer"></i></span>
-                        <b>Empty table.</b>
-                    </div>
-                    <button @click="setupNotificationDismiss()" type="button"
-                        class="button small textual --jb-notification-dismiss bg-white">Cerrar</button>
-                </div>
-            </div---->
-
+            <NotificationFail :message="$page.props.flash.error" />
 
             <!---Tabla con elementos-->
-            <div class="card has-table" v-if="posts">
+            <div class="card has-table" v-if="posts.data.length">
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-post-outline"></i></span>
@@ -85,7 +58,7 @@ const setupNotificationDismiss = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="post in posts" :key="post.id">
+                            <tr v-for="post in posts.data" :key="post.id">
                                 <td data-label="Título">{{ post.titulo }}</td>
                                 <td data-label="Contenido">{{ post.contenido }}</td>
                                 <td data-label="Autor">{{ post.autor }}</td>
@@ -118,28 +91,13 @@ const setupNotificationDismiss = () => {
                             </tr>
                         </tbody>
                     </table>
-                    <!---div class="table-pagination">
-                        <div class="flex items-center justify-between">
-                            <div class="buttons">
-                                <button type="button" class="button active">1</button>
-                                <button type="button" class="button">2</button>
-                                <button type="button" class="button">3</button>
-                            </div>
-                            <small>Page 1 of 3</small>
-                        </div>
-                    </div---->
+
+                    <Pagination :pagination="posts.meta" />
                 </div>
             </div>
 
             <!---Tabla Vacía-->
-            <div class="card empty" v-else>
-                <div class="card-content">
-                    <div>
-                        <span class="icon large"><i class="mdi mdi-emoticon-sad mdi-48px"></i></span>
-                    </div>
-                    <p>No hay nada aquí....</p>
-                </div>
-            </div>
+            <EmptyTable v-else />
 
         </section>
 

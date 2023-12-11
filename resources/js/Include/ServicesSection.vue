@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Services Section Start -->
-    <section class="overflow-hidden pt-20 lg:pt-[100px]" id="presentacion">
+    <section class="overflow-hidden pb-5 pt-20 lg:pt-[100px]" id="presentacion">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap items-center justify-between">
                 <div class="w-full px-4 lg:w-6/12">

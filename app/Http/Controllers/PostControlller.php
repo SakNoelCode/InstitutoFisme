@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
+use App\Http\Resources\PostResource;
 use App\Models\Categoria;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
@@ -16,8 +17,9 @@ class PostControlller extends Controller
      */
     public function index()
     {
-        $posts = Post::with('categorias')->get();
-        //dd($posts);
+        $posts = PostResource::collection(
+            Post::with('categorias')->latest()->paginate(5)
+        );
         return Inertia::render('Post/Index', compact('posts'));
     }
 
@@ -33,15 +35,8 @@ class PostControlller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        $request->validate([
-            'titulo' => 'required|max:200',
-            'contenido' => 'required',
-            'autor' => 'required|max:100',
-            'img_path' => 'required|mimes:png,jpg|max:2048'
-        ]);
-
         $file = $request->file('img_path');
         $nameDocumento = (new Post())->guardarImagen($file);
         $post = Post::create([
@@ -52,7 +47,7 @@ class PostControlller extends Controller
         ]);
         $post->categorias()->attach($request->categoria);
 
-        return Redirect::route('posts.index')->with('message','Post registrado');
+        return Redirect::route('posts.index')->with('message', 'Post registrado');
     }
 
     /**
@@ -84,16 +79,8 @@ class PostControlller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(StorePostRequest $request, Post $post)
     {
-        //dd($request);
-        $request->validate([
-            'titulo' => 'required|max:200',
-            'contenido' => 'required',
-            'autor' => 'required|max:100',
-            'img_path' => 'mimes:png,jpg|max:2048'
-        ]);
-
         $file = $request->file('img_path');
 
         if ($file) {
@@ -103,7 +90,7 @@ class PostControlller extends Controller
                 Storage::delete($imagenExistente);
             }
             $nameFile = (new Post())->guardarImagen($file);
-        }else{
+        } else {
             $nameFile = $post->img_path;
         }
 
@@ -115,7 +102,7 @@ class PostControlller extends Controller
         ]);
         $post->categorias()->sync($request->categoria);
 
-        return Redirect::route('posts.index')->with('message','Post editado');
+        return Redirect::route('posts.index')->with('message', 'Post editado');
     }
 
     /**
@@ -125,6 +112,6 @@ class PostControlller extends Controller
     {
         Storage::delete($post->img_path);
         $post->delete();
-        return Redirect::route('posts.index')->with('message','Post eliminado');
+        return Redirect::route('posts.index')->with('error', 'Post eliminado');
     }
 }
