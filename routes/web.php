@@ -1,13 +1,12 @@
 <?php
 
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EgresadoController;
 use App\Http\Controllers\EquipamientoController;
 use App\Http\Controllers\PostControlller;
 use App\Http\Controllers\welcomeController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +28,7 @@ Route::get('/cursos', [welcomeController::class, 'showCursos'])->name('inicio.cu
 Route::get('/egresados', [welcomeController::class, 'showEgresados'])->name('inicio.egresados');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::prefix('admin')->group(function () {
         Route::resource('posts', PostControlller::class)->except('show');
