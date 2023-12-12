@@ -49,6 +49,20 @@ const toogleDropDown = () => {
                         <span class="menu-item-label">cursos</span>
                     </Link>
                 </li>
+
+                <li class="">
+                    <Link :href="route('equipamientos.index')"> 
+                        <span class="icon"><span class="mdi mdi-tools"></span></span>
+                        <span class="menu-item-label">Equipamiento</span>
+                    </Link>
+                </li>
+
+                <li class="">
+                    <Link :href="route('egresados.index')"> 
+                        <span class="icon"><span class="mdi mdi-account-group-outline"></span></span>
+                        <span class="menu-item-label">Egresados</span>
+                    </Link>
+                </li>
                 <!--li class="--set-active-forms-html">
                     <a href="forms.html">
                         <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>

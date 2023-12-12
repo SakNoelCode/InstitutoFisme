@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\EgresadoController;
+use App\Http\Controllers\EquipamientoController;
 use App\Http\Controllers\PostControlller;
 use App\Http\Controllers\welcomeController;
 use Illuminate\Foundation\Application;
@@ -34,5 +36,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::prefix('admin')->group(function () {
         Route::resource('posts', PostControlller::class)->except('show');
         Route::resource('cursos', CursoController::class)->except('show');
+        Route::resource('egresados', EgresadoController::class)->except('show');
+        Route::resource('equipamientos', EquipamientoController::class)->except('show');
     });
 });
