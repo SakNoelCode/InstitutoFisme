@@ -6,11 +6,15 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
+    use HasFactory;
+
     protected $guarded = ['id'];
 
+    //Relaciones
     public function categorias(): BelongsToMany
     {
         return $this->belongsToMany(Categoria::class)->withTimestamps();
@@ -20,8 +24,24 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }
+  
+    //Funciones públicas
+    public function manejoImagen($file, $id): String
+    {
+        $object = Post::find($id);
+        if ($file) {
+            $imagenExistente = $object->img_path;
 
-    use HasFactory;
+            if ($imagenExistente) {
+                Storage::delete($imagenExistente);
+            }
+            $nameFile = $this->guardarImagen($file);
+        } else {
+            $nameFile = $object->img_path;
+        }
+
+        return $nameFile;
+    }
 
     public function guardarImagen($file)
     {

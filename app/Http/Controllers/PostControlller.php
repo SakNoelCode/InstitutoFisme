@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\updatePostRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Categoria;
 use App\Models\Post;
@@ -79,26 +80,15 @@ class PostControlller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StorePostRequest $request, Post $post)
+    public function update(updatePostRequest $request, Post $post)
     {
-        $file = $request->file('img_path');
-
-        if ($file) {
-            $imagenExistente = $post->img_path;
-
-            if ($imagenExistente) {
-                Storage::delete($imagenExistente);
-            }
-            $nameFile = (new Post())->guardarImagen($file);
-        } else {
-            $nameFile = $post->img_path;
-        }
+        $img_path = (new Post())->manejoImagen($request->file('img_path'), $post->id);
 
         $post->update([
             "titulo" => $request->titulo,
             "contenido" => $request->contenido,
             "autor" => $request->autor,
-            "img_path" => $nameFile
+            "img_path" => $img_path
         ]);
         $post->categorias()->sync($request->categoria);
 
