@@ -42,6 +42,13 @@ const toogleDropDown = () => {
                         <span class="menu-item-label">Posts</span>
                     </Link>
                 </li>
+
+                <li class="">
+                    <Link :href="route('cursos.index')"> 
+                        <span class="icon"><span class="mdi mdi-book"></span></span>
+                        <span class="menu-item-label">cursos</span>
+                    </Link>
+                </li>
                 <!--li class="--set-active-forms-html">
                     <a href="forms.html">
                         <span class="icon"><i class="mdi mdi-square-edit-outline"></i></span>

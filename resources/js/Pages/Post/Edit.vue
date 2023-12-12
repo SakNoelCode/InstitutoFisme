@@ -59,7 +59,7 @@ const seleccionaImg = () => {
 </script>
 
 <template>
-    <AppLayout title="Crear Post">
+    <AppLayout title="Editar Post">
 
         <HeaderSection :icon="'mdi mdi-arrow-left'" :text-icon="'Volver'" :href-icon="route('posts.index')">
             <li>Posts</li>
