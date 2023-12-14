@@ -1,5 +1,3 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 # Aplicación para el instituto de investigación de la FISME
 ![Img](https://github.com/SakNoelCode/Imagenes_Proyectos/blob/master/institute.png)
 
@@ -24,22 +22,17 @@ npm install
 DB_DATABASE=nombreBasedeDatos
 ```
 
-6. Ejecutar el comando en la terminal para crear la **key**
+6. Ejecutar el comando para ejecutar la aplicación
 ```bash
-php artisan key:generate 
+php artisan app:install
 ```
 
-7. Correr la migraciones del proyecto
-```bash
-php artisan migrate
-```
-
-9. Compilar archivos
+7. Compilar archivos
 ```bash
 npm run dev
 ```
 
-10. Ejecute el proyecto
+8. Ejecute el proyecto
 ```bash
 php artisan serve
 ```
