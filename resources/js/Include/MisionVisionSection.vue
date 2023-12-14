@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Pricing Section Start -->
-    <section class="relative z-20 overflow-hidden bg-white pt-20 lg:pt-[100px]">
+    <section class="relative z-20 overflow-hidden bg-white pt-5 lg:pt-[20px] pb-10">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4">

@@ -41,7 +41,7 @@ const props = defineProps({
                 <EmptyTable v-else />
                 <!----End Content Noticias-->
 
-                <PaginationWhite v-if="posts.data.length" :pagination="posts.meta" />
+                <PaginationWhite v-if="posts.data.length && posts.meta.total > 6" :pagination="posts.meta" />
             </div>
         </section>
         <!-- ====== Blog Section End -->

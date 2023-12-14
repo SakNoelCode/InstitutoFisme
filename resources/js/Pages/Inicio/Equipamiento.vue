@@ -42,7 +42,7 @@ defineProps({
                 </template>
                 <EmptyTable v-else />
 
-                <PaginationWhite v-if="equipos.data.length" :pagination="equipos.meta" />
+                <PaginationWhite v-if="equipos.data.length && equipos.meta.total > 8" :pagination="equipos.meta" />
             </div>
         </section>
         <!-- ====== Portfolio Section End -->

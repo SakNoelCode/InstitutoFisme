@@ -40,7 +40,7 @@ defineProps({
                 </template>
                 <EmptyTable v-else />
 
-                <PaginationWhite v-if="cursos.data.length" :pagination="cursos.meta" />
+                <PaginationWhite v-if="cursos.data.length && cursos.meta.total > 6" :pagination="cursos.meta" />
 
             </div>
         </section>

@@ -3,7 +3,7 @@
 
 <template>
     <!-- ====== Services Section Start -->
-    <section class="pt-20 lg:pt-[100px]">
+    <section class="pt-5 lg:pt-[20px]">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4">
@@ -22,7 +22,7 @@
             </div>
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-md hover:shadow-lg md:px-7 xl:px-10">
+                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-lg hover:shadow-xl md:px-7 xl:px-10">                      
                         <p class="text-body-color">
                             Promover la interacción entre expertos y 
                             usuarios en el área de la TIC.
@@ -30,35 +30,35 @@
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-md hover:shadow-lg md:px-7 xl:px-10">
+                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-lg hover:shadow-xl md:px-7 xl:px-10">
                         <p class="text-body-color">
                             Fortalecer las capacidades investigativas especializadas para docentes y estudiantes.
                         </p>
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-md hover:shadow-lg md:px-7 xl:px-10">
+                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-lg hover:shadow-xl md:px-7 xl:px-10">
                         <p class="text-body-color">
                             Participar en proyectos implementados para la comunidad universitaria.
                         </p>
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-md hover:shadow-lg md:px-7 xl:px-10">
+                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-lg hover:shadow-xl md:px-7 xl:px-10">
                         <p class="text-body-color">
                             Ejecutar investigaciones formativas con participación de estudiantes de pregrado.
                         </p>
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-md hover:shadow-lg md:px-7 xl:px-10">
+                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-lg hover:shadow-xl md:px-7 xl:px-10">
                         <p class="text-body-color">
                             Integrar la investigación con los programas de pregrado y posgrado.
                         </p>
                     </div>
                 </div>
                 <div class="w-full px-4 md:w-1/2 lg:w-1/3">
-                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-md hover:shadow-lg md:px-7 xl:px-10">
+                    <div class="mb-8 rounded-[20px] bg-white p-10 shadow-lg hover:shadow-xl md:px-7 xl:px-10">
                         <p class="text-body-color">
                             Planificar programas de desarrollo para el emprendimiento estudiantil.
                         </p>
