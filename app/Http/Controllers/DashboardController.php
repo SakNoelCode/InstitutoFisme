@@ -6,7 +6,6 @@ use App\Models\Curso;
 use App\Models\Egresado;
 use App\Models\Equipamiento;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class DashboardController extends Controller

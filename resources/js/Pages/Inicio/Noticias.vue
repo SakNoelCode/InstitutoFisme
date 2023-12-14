@@ -1,9 +1,11 @@
 <script setup>
 import AppLayout from '@/Layouts/Inicio/AppLayout.vue';
 import NewsSection from '@/Include/NewsSection.vue';
+import EmptyTable from '@/Components/EmptyTable.vue';
+import PaginationWhite from '@/Components/PaginationWhite.vue';
 
 const props = defineProps({
-    posts: Array
+    posts: Object
 })
 </script>
  
@@ -29,12 +31,17 @@ const props = defineProps({
                     </div>
                 </div>
 
-                <div class="-mx-4 flex flex-wrap">
+                <!----Content Noticias-->
+                <template v-if="posts.data.length">
+                    <div class="-mx-4 flex flex-wrap">
+                        <NewsSection v-for="post in posts.data" :key="post.id" :id="post.id" :fecha="post.created_at"
+                            :titulo="post.titulo" :contenido="post.contenido" :imagen="post.img_path" />
+                    </div>
+                </template>
+                <EmptyTable v-else />
+                <!----End Content Noticias-->
 
-                    <NewsSection v-for="post in posts" :key="post.id" :id="post.id" :fecha="post.created_at"
-                        :titulo="post.titulo" :contenido="post.contenido" :imagen="post.img_path" />
-
-                </div>
+                <PaginationWhite v-if="posts.data.length" :pagination="posts.meta" />
             </div>
         </section>
         <!-- ====== Blog Section End -->

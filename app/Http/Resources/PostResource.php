@@ -20,7 +20,8 @@ class PostResource extends JsonResource
             'contenido' => $this->contenido,
             'autor' => $this->autor,
             'categorias' => $this->categorias,
-            'created_at' => $this->created_at
+            'created_at' => $this->created_at,
+            'img_path' => $this->img_path
         ];
     }
 }

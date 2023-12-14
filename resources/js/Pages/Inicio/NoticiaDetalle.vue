@@ -1,10 +1,12 @@
 <script setup>
 import AppLayout from '@/Layouts/Inicio/AppLayout.vue';
+import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
     post: Object,
     imgPost: String,
-    imgAutor: String
+    imgAutor: String,
+    posts: Array
 })
 
 </script>
@@ -13,70 +15,108 @@ const props = defineProps({
     <AppLayout title="Detalles de la noticia">
 
         <section class="pt-20 lg:pt-[80px]">
-            <div class="container mx-auto">
-                <!---div class="-mx-4 flex flex-wrap justify-center">
-                    <div class="w-full px-4">
-                        <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
-                            <span class="mb-2 block text-lg font-semibold text-primary">
-                                Nuestro Blog
-                            </span>
-                            <h2 class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]">
-                                Noticias y eventos
-                            </h2>
-                            <p class="text-base text-body-color">
-                                Mantente al tanto revisando nuestro blog, donde subiremos noticias y eventos.
+
+            <div class="container mx-auto flex flex-wrap py-6">
+
+                <!-- Post Section -->
+                <section class="w-full md:w-2/3 flex flex-col items-center px-3">
+
+                    <article class="flex flex-col shadow my-4">
+
+
+                        <div class="pt-8 pb-10 bg-white antialiased">
+                            <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+                                <article class="mx-auto w-full max-w-2xl">
+                                    <header class="mb-4 lg:mb-6">
+                                        <address class="flex items-center mb-6 not-italic">
+                                            <div class="inline-flex items-center mr-3 text-sm text-gray-900">
+                                                <img class="mr-4 w-16 h-16 rounded-full"
+                                                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                    alt="Autor">
+                                                <div>
+                                                    <a href="#" rel="author" class="text-xl font-bold text-gray-900">
+                                                        {{ post.autor }}
+                                                    </a>
+                                                    <p class="text-base text-gray-500">
+                                                        Estudiante de la Fisme
+                                                    </p>
+                                                    <p class="text-base text-gray-500">
+                                                        <time pubdate datetime="2022-02-08" title="February 8th, 2022">
+                                                            {{ post.created_at }}
+                                                        </time>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </address>
+                                        <h1
+                                            class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
+                                            {{ post.titulo }}
+                                        </h1>
+
+                                    </header>
+
+                                    <p class="text-lg text-body-color my-10">
+                                        {{ post.contenido }}
+                                    </p>
+                                    <figure>
+                                        <img :src="imgPost" :alt="post.titulo">
+                                    </figure>
+
+                                </article>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <!-- Sidebar Section -->
+                <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
+
+                    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                        <!---p class="text-xl font-semibold pb-5">About Us</p>
+                        <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu
+                            odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p--->
+                        <!--a href="#"
+                            class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+                            Volver
+                        </a--->
+
+                        <Link :href="route('inicio.noticias')"
+                            class="rounded-lg bg-primary py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
+                        <span class="mdi mdi-arrow-left-bold"></span>
+                        Volver a Blog
+                        </Link>
+                    </div>
+
+                    <div class="w-full bg-white shadow flex flex-col my-4 p-6">
+                        <p class="text-xl font-semibold pb-5">Últimas noticias:</p>
+                        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow mb-3"
+                            v-for="item in posts" :key="item.id">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    {{ item.titulo }}
+                                </h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700">
+                                {{ item.contenido.slice(0, 50) }}....
                             </p>
+                            <Link :href="route('inicio.detalleNoticia',item.id)"
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                Leer más
+                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </Link>
                         </div>
                     </div>
-                </div--->
 
-                <div>
-                    <main class="pt-8 pb-10 lg:pt-16 lg:pb-10 bg-white antialiased">
-                        <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
-                            <article class="mx-auto w-full max-w-2xl">
-                                <header class="mb-4 lg:mb-6">
-                                    <address class="flex items-center mb-6 not-italic">
-                                        <div class="inline-flex items-center mr-3 text-sm text-gray-900">
-                                            <img class="mr-4 w-16 h-16 rounded-full"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                                alt="Autor">
-                                            <div>
-                                                <a href="#" rel="author" class="text-xl font-bold text-gray-900">
-                                                    {{ post.autor }}
-                                                </a>
-                                                <p class="text-base text-gray-500">
-                                                    Estudiante de la Fisme
-                                                </p>
-                                                <p class="text-base text-gray-500">
-                                                    <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                                                        {{ post.created_at }}
-                                                    </time>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </address>
-                                    <h1
-                                        class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
-                                        {{ post.titulo }}
-                                    </h1>
-
-                                </header>
-
-                                <p class="text-lg text-body-color my-10">
-                                    {{ post.contenido }}
-                                </p>
-                                <figure>
-                                    <img :src="imgPost" alt="Hola">
-                                </figure>
-
-                            </article>
-                        </div>
-                    </main>
-
-
-                </div>
+                </aside>
 
             </div>
+
         </section>
 
     </AppLayout>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostResource;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,14 +22,17 @@ class welcomeController extends Controller
 
     public function showNoticias()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        //$posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = PostResource::collection(Post::latest()->paginate(6));
+        //dd($posts);
         return Inertia::render('Inicio/Noticias', ['posts' => $posts]);
     }
 
     public function showDetalleNoticia(Post $post)
     {
-        $imgPost = asset('storage/'.$post->img_path);
-        return Inertia::render('Inicio/NoticiaDetalle', ['post' => $post,'imgPost' => $imgPost]);
+        $imgPost = asset('storage/' . $post->img_path);
+        $posts = Post::latest()->take(2)->get();
+        return Inertia::render('Inicio/NoticiaDetalle', ['post' => $post, 'imgPost' => $imgPost,'posts' => $posts]);
     }
 
     public function showEquipamiento()
