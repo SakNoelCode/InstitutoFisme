@@ -21,7 +21,8 @@ class CursoResource extends JsonResource
             'tipo' => $this->tipo,
             'costo' => $this->costo . ' soles',
             'fecha_inicio' => date('d/m/Y', strtotime($this->fecha_inicio)),
-            'fecha_fin' => date('d/m/Y', strtotime($this->fecha_fin))
+            'fecha_fin' => date('d/m/Y', strtotime($this->fecha_fin)),
+            'img_path' => $this->img_path
         ];
     }
 }

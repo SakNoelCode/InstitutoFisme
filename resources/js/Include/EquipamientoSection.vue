@@ -11,7 +11,7 @@ const props = defineProps({
         <div class="relative mb-12">
             <div class="overflow-hidden rounded-lg">
                 <!---img src="images/portfolio/portfolio-01/equi_1.jpg" alt="portfolio" class="w-full" /--->
-                <img :src="'storage/' + imagen" :alt="nombre" class="w-[370px] h-[300px] object-cover object-center" />
+                <img :src="'storage/' + imagen" :alt="nombre" class="w-full h-[300px] object-cover object-center" />
             </div>
             <div class="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-9 px-3 text-center shadow-lg">
                 <span class="mb-2 block text-sm font-semibold text-primary">

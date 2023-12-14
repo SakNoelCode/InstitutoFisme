@@ -93,11 +93,11 @@ const props = defineProps({
                         <p class="text-xl font-semibold pb-5">Últimas noticias:</p>
                         <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow mb-3"
                             v-for="item in posts" :key="item.id">
-                            <a href="#">
+                            <Link :href="route('inicio.detalleNoticia',item.id)">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                     {{ item.titulo }}
                                 </h5>
-                            </a>
+                            </Link>
                             <p class="mb-3 font-normal text-gray-700">
                                 {{ item.contenido.slice(0, 50) }}....
                             </p>

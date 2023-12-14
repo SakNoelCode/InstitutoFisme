@@ -50,7 +50,7 @@ let navbarOpen = ref(false)
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink :active="route().current('inicio.cursos')" :href="route('inicio.cursos')">
+                                    <NavLink :active="$page.url.startsWith('/cursos')" :href="route('inicio.cursos')">
                                         Cursos
                                     </NavLink>
                                 </li>

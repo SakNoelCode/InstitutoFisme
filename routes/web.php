@@ -25,6 +25,7 @@ Route::get('/blog', [welcomeController::class, 'showNoticias'])->name('inicio.no
 Route::get('/blog/{post}', [welcomeController::class, 'showDetalleNoticia'])->name('inicio.detalleNoticia');
 Route::get('/equipamiento', [welcomeController::class, 'showEquipamiento'])->name('inicio.equipamiento');
 Route::get('/cursos', [welcomeController::class, 'showCursos'])->name('inicio.cursos');
+Route::get('/cursos/{curso}',[welcomeController::class,'showDetalleCurso'])->name('inicio.detalleCurso');
 Route::get('/egresados', [welcomeController::class, 'showEgresados'])->name('inicio.egresados');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {

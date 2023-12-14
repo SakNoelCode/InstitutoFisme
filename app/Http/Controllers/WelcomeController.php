@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CursoResource;
 use App\Http\Resources\EquipamientoResource;
 use App\Http\Resources\PostResource;
+use App\Models\Curso;
 use App\Models\Equipamiento;
 use App\Models\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class welcomeController extends Controller
@@ -24,9 +24,7 @@ class welcomeController extends Controller
 
     public function showNoticias()
     {
-        //$posts = Post::orderBy('created_at', 'desc')->get();
         $posts = PostResource::collection(Post::latest()->paginate(6));
-        //dd($posts);
         return Inertia::render('Inicio/Noticias', ['posts' => $posts]);
     }
 
@@ -40,12 +38,19 @@ class welcomeController extends Controller
     public function showEquipamiento()
     {
         $equipos = EquipamientoResource::collection(Equipamiento::latest()->paginate(8));
-        return Inertia::render('Inicio/Equipamiento',['equipos'=>$equipos]);
+        return Inertia::render('Inicio/Equipamiento', ['equipos' => $equipos]);
     }
 
     public function showCursos()
     {
-        return Inertia::render('Inicio/Cursos');
+        $cursos = CursoResource::collection(Curso::latest()->paginate(6));
+        return Inertia::render('Inicio/Cursos', ['cursos' => $cursos]);
+    }
+
+    public function showDetalleCurso(Curso $curso)
+    {
+        $imgCurso = asset('storage/' . $curso->img_path);
+        return Inertia::render('Inicio/CursoDetalle',compact('curso','imgCurso'));
     }
 
     public function showEgresados()
