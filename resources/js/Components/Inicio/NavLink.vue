@@ -9,8 +9,8 @@ const props = defineProps({
 
 const classes = computed(() => {
     return props.active
-        ? 'flex py-2 text-base font-medium text-primary lg:ml-12 lg:inline-flex'
-        : 'flex py-2 text-base font-medium text-dark hover:text-primary lg:ml-12 lg:inline-flex';
+        ? 'flex py-2 text-base font-medium text-primary lg:ml-12 lg:inline-flex border-b-2 border-primary'
+        : 'flex py-2 text-base font-medium text-dark hover:text-primary hover:border-b-2 hover:border-primary lg:ml-12 lg:inline-flex';
 });
 </script>
 

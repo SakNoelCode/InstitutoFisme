@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CursoResource;
+use App\Http\Resources\EgresadoResource;
 use App\Http\Resources\EquipamientoResource;
 use App\Http\Resources\PostResource;
 use App\Models\Curso;
+use App\Models\Egresado;
 use App\Models\Equipamiento;
 use App\Models\Post;
 use Inertia\Inertia;
@@ -50,11 +52,12 @@ class welcomeController extends Controller
     public function showDetalleCurso(Curso $curso)
     {
         $imgCurso = asset('storage/' . $curso->img_path);
-        return Inertia::render('Inicio/CursoDetalle',compact('curso','imgCurso'));
+        return Inertia::render('Inicio/CursoDetalle', compact('curso', 'imgCurso'));
     }
 
     public function showEgresados()
     {
-        return Inertia::render('Inicio/Egresados');
+        $egresados = EgresadoResource::collection(Egresado::latest()->paginate(8));
+        return Inertia::render('Inicio/Egresados',compact('egresados'));
     }
 }

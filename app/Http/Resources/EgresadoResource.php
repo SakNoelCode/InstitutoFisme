@@ -17,7 +17,8 @@ class EgresadoResource extends JsonResource
         return [
             'id' => $this->id,
             'nombre' => $this->nombre,
-            'descripcion' => $this->descripcion
+            'descripcion' => $this->descripcion,
+            'img_path' => $this->img_path
         ];
     }
 }
