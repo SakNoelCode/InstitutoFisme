@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\EquipamientoResource;
 use App\Http\Resources\PostResource;
+use App\Models\Equipamiento;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,12 +34,13 @@ class welcomeController extends Controller
     {
         $imgPost = asset('storage/' . $post->img_path);
         $posts = Post::latest()->take(2)->get();
-        return Inertia::render('Inicio/NoticiaDetalle', ['post' => $post, 'imgPost' => $imgPost,'posts' => $posts]);
+        return Inertia::render('Inicio/NoticiaDetalle', ['post' => $post, 'imgPost' => $imgPost, 'posts' => $posts]);
     }
 
     public function showEquipamiento()
     {
-        return Inertia::render('Inicio/Equipamiento');
+        $equipos = EquipamientoResource::collection(Equipamiento::latest()->paginate(8));
+        return Inertia::render('Inicio/Equipamiento',['equipos'=>$equipos]);
     }
 
     public function showCursos()

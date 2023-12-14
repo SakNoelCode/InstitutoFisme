@@ -18,7 +18,8 @@ class EquipamientoResource extends JsonResource
             'id' => $this->id,
             'nombre' => $this->nombre,
             'modelo' => $this->modelo,
-            'creacion' => date('d/m/Y', strtotime($this->created_at))
+            'creacion' => date('d/m/Y', strtotime($this->created_at)),
+            'img_path' => $this->img_path
         ];
     }
 }
