@@ -31,7 +31,7 @@ const props = defineProps({
             <NotificationFail :message="$page.props.flash.error" />
 
             <!---Tabla con elementos-->
-            <div class="card has-table" v-if="egresados">
+            <div class="card has-table" v-if="egresados.data.length">
                 <header class="card-header">
                     <p class="card-header-title">
                         <span class="icon"><i class="mdi mdi-account-group-outline"></i></span>
