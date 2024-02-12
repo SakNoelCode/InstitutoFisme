@@ -41,4 +41,11 @@ class Curso extends Model
         }
         return  'Cursos/' . $uniqueFileName;
     }
+
+    public function setUrlInscripcionesAttribute($value): void
+    {
+        $this->attributes['url_inscripciones'] = urlencode($value);
+    }
+
+    
 }

@@ -8,6 +8,7 @@ import { ref } from 'vue';
 const form = useForm({
     nombre: '',
     descripcion: '',
+    url_inscripciones: '',
     tipo: 'Curso',
     costo: '',
     duracion: '',
@@ -96,6 +97,16 @@ const seleccionaImg = () => {
                                     placeholder="Describa el curso"></textarea>
                             </div>
                             <InputError class="mt-2" :message="form.errors.descripcion" />
+                        </div>
+
+                        <!----URL del curso-->
+                        <div class="field">
+                            <label class="label" for="nombre">URL para inscripciones:</label>
+                            <div class="control">
+                                <input class="input" type="text" v-model="form.url_inscripciones" id="nombre"
+                                    placeholder="URL de Google Forms para las inscripciones">
+                            </div>
+                            <InputError class="mt-2" :message="form.errors.url_inscripciones" />
                         </div>
 
                         <!----Tipo del curso-->

@@ -24,6 +24,7 @@ class updateCursoRequest extends FormRequest
         return [
             'nombre' => 'required|max:100',
             'descripcion' => 'required|max:500',
+            'url_inscripciones' => 'required|url',
             'img' => 'mimes:png,jpg|max:2048',
             'tipo' => 'required|max:100',
             'costo' => 'required|numeric',

@@ -18,6 +18,7 @@ class CursoResource extends JsonResource
             'id' => $this->id,
             'nombre' => $this->nombre,
             'descripcion' => $this->descripcion,
+            'url_inscripciones' => urldecode($this->url_inscripciones),
             'tipo' => $this->tipo,
             'costo' => $this->costo . ' soles',
             'fecha_inicio' => date('d/m/Y', strtotime($this->fecha_inicio)),

@@ -57,7 +57,7 @@ class Post extends Model
     {
         $carbon = Carbon::parse($value);
         // Formatear la fecha y hora
-        $fechaFormateada = $carbon->format('d/m/Y H:i');
+        $fechaFormateada = $carbon->format('d/m/Y');
         return $fechaFormateada;
     }
 }

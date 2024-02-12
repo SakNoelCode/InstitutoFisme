@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('duracion', 45);
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
+            $table->string('url_inscripciones', 500);
             $table->string('estado', 45)->default('abierto'); //abierto - en progreso - culminado
             $table->timestamps();
         });

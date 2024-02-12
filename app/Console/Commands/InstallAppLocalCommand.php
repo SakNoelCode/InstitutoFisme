@@ -31,6 +31,7 @@ class InstallAppLocalCommand extends Command
             $command_1 = Artisan::call('key:generate');
             $command_2 = Artisan::call('migrate');
             $command_3 = Artisan::call('db:seed');
+            $command_4 = Artisan::call('storage:link');
 
             if ($command_1 !== 0 || $command_2 !== 0 || $command_3 !== 0) {
                 $this->error('Ups, algo salió mal');
@@ -38,6 +39,7 @@ class InstallAppLocalCommand extends Command
                 $this->info('Key generada');
                 $this->info('Migración ejecutada');
                 $this->info('Seeder ejecutados');
+                $this->info('Storage link ejecutado');
             }
         } catch (Exception $e) {
             $this->error('Se produjo una excepción ' . $e->getMessage());

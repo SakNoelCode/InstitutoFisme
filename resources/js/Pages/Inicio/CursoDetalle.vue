@@ -8,6 +8,10 @@ const props = defineProps({
     imgCurso: String,
 })
 
+const url = computed(() => {
+    return decodeURIComponent(props.curso.url_inscripciones);
+})
+
 const showPrecio = computed(() => {
     return props.curso.costo + ' Soles'
 })
@@ -16,7 +20,7 @@ const fechaInicio = computed(() => {
     const fechaString = props.curso.fecha_inicio;
     const fecha = new Date(fechaString);
 
-    const dia = fecha.getDate();
+    const dia = fecha.getDate() + 1;
     const mes = fecha.getMonth() + 1; // El mes se devuelve de 0 a 11, por lo que sumamos 1
     const year = fecha.getFullYear();
 
@@ -31,7 +35,7 @@ const fechaFin = computed(() => {
     const fechaString = props.curso.fecha_fin;
     const fecha = new Date(fechaString);
 
-    const dia = fecha.getDate();
+    const dia = fecha.getDate() + 1; 
     const mes = fecha.getMonth() + 1; // El mes se devuelve de 0 a 11, por lo que sumamos 1
     const year = fecha.getFullYear();
 
@@ -82,6 +86,11 @@ const fechaFin = computed(() => {
                         <p class="pb-2">
                             <span class="font-semibold">Fecha Fin:</span> {{ fechaFin }}
                         </p>
+
+                        <p class="pb-2">
+                            <span class="font-semibold">Inscripciones: </span> <a target="_blank" :href="url"><span class="mdi mdi-format-color-highlight"></span></a>
+                        </p>
+                        
 
                     </div>
 

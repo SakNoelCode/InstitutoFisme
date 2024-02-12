@@ -24,6 +24,7 @@ class UpdateEquipamientoRequest extends FormRequest
         return [
             'nombre' => 'required|max:100',
             'modelo' => 'required|max:100',
+            'descripcion' => 'required',
             'img' => 'mimes:png,jpg|max:2048'
         ];
     }

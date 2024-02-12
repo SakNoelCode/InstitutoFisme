@@ -23,6 +23,7 @@ const form = useForm({
     _method: 'PUT',
     nombre: props.equipo.nombre,
     modelo: props.equipo.modelo,
+    descripcion: props.equipo.descripcion,
     img: props.equipo.img_path
 });
 
@@ -90,6 +91,16 @@ const seleccionaImg = () => {
                                     placeholder="Meta Quez 2">
                             </div>
                             <InputError class="mt-2" :message="form.errors.modelo" />
+                        </div>
+
+                         <!---Descripcion del equipo-->
+                         <div class="field">
+                            <label class="label" for="descripcion">Descripción:</label>
+                            <div class="control">
+                                <textarea class="textarea" v-model="form.descripcion" id="descripcion"
+                                    placeholder="Agregue una descripción para el equipo"></textarea>
+                            </div>
+                            <InputError class="mt-2" :message="form.errors.descripcion" />
                         </div>
 
                         <hr>

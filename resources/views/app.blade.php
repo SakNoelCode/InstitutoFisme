@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="{{asset('css/tailwind.css')}}" />
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     @routes
     @vite(['resources/css/app.css','resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
     @inertiaHead

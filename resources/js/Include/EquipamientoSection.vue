@@ -2,8 +2,21 @@
 const props = defineProps({
     nombre: String,
     modelo: String,
+    descripcion: String,
     imagen: String
 })
+
+const showCustomModal = () => {
+  Swal.fire({
+    title: props.nombre,
+    text: props.descripcion,
+    imageUrl: 'storage/'+ props.imagen,
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: props.nombre
+  });
+};
+
 </script>
 
 <template>
@@ -20,13 +33,16 @@ const props = defineProps({
                 <h3 class="mb-4 text-xl font-bold text-dark">
                     {{ modelo }}
                 </h3>
-                <a href="javascript:void(0)"
+                <button @click="showCustomModal()"
                     class="inline-block rounded-md border py-3 px-7 text-sm font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white">
                     Ver detalles
-                </a>
+                </button>
+
             </div>
         </div>
     </div>
+
+
 
     <!---div class="w-full px-4 md:w-1/2 xl:w-1/3">
                     <div class="relative mb-12">

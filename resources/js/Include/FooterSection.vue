@@ -1,4 +1,5 @@
-<script>
+<script setup>
+let year = new Date().getFullYear();
 </script>
 
 <template>
@@ -142,7 +143,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <p class="text-base" style="color: #ccc;">&copy; 2023 IITIC</p>
+                        <p class="text-base" style="color: #ccc;">&copy; {{ year }} IITIC</p>
                     </div>
                 </div>
             </div>

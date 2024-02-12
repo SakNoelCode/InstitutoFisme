@@ -37,7 +37,7 @@ defineProps({
                 <template v-if="equipos.data.length">
                     <div class="-mx-4 flex flex-wrap">
                         <EquipamientoSection v-for="item in equipos.data" :key="item.id" :nombre="item.nombre"
-                            :modelo="item.modelo" :imagen="item.img_path" />
+                            :modelo="item.modelo" :descripcion="item.descripcion" :imagen="item.img_path" />
                     </div>
                 </template>
                 <EmptyTable v-else />

@@ -63,14 +63,11 @@ const props = defineProps({
                             <address class="flex items-center mb-6 not-italic">
                                 <div class="inline-flex items-center mr-3 text-sm text-gray-900">
                                     <img class="mr-4 w-16 h-16 rounded-full"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Autor">
+                                        src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="Autor">
                                     <div>
                                         <a href="#" rel="author" class="text-xl font-bold text-gray-900">
                                             {{ post.autor }}
                                         </a>
-                                        <p class="text-base text-gray-500">
-                                            Estudiante de la Fisme
-                                        </p>
                                         <p class="text-base text-gray-500">
                                             <time pubdate datetime="2022-02-08" title="February 8th, 2022">
                                                 {{ post.created_at }}
