@@ -208,10 +208,10 @@
                             también contamos con los versátiles dispositivos Arduino, estimulando tu
                             creatividad y habilidades prácticas.
                         </p>
-                        <a href="javascript:void(0)"
+                        <!---a href="javascript:void(0)"
                             class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-10 text-center text-base font-normal text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
                             Comenzar ahora
-                        </a>
+                        </a---->
                     </div>
                 </div>
             </div>

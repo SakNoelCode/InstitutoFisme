@@ -6,6 +6,7 @@ use App\Http\Controllers\EgresadoController;
 use App\Http\Controllers\EquipamientoController;
 use App\Http\Controllers\PostControlller;
 use App\Http\Controllers\welcomeController;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,5 +37,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         Route::resource('cursos', CursoController::class)->except('show');
         Route::resource('egresados', EgresadoController::class)->except('show');
         Route::resource('equipamientos', EquipamientoController::class)->except('show');
+    });
+
+    Route::get('/manual-pdf', function () {
+        $file = public_path('doc/reciboIngresoTesis.pdf');
+        return response()->file($file);
     });
 });

@@ -39,6 +39,10 @@ const ToogleMenuMobile = (event) => {
     }
 }
 
+const openPdf = () => {
+    window.open('/manual-pdf', '_blank');
+}
+
 </script>
 
 <template>
@@ -47,9 +51,9 @@ const ToogleMenuMobile = (event) => {
             <a class="navbar-item mobile-aside-button" @click="toogleMobileAside">
                 <span class="icon"><i id="icon-aside" class="mdi mdi-forwardburger mdi-24px"></i></span>
             </a>
-            <div class="navbar-item">
+            <!--div class="navbar-item">
                 <div class="control"><input placeholder="Buscar....." class="input"></div>
-            </div>
+            </div--->
         </div>
         <div class="navbar-brand is-right">
             <a class="navbar-item --jb-navbar-menu-toggle" data-target="navbar-menu" @click="ToogleMenuMobile">
@@ -123,7 +127,7 @@ const ToogleMenuMobile = (event) => {
                         </a----->
                     </div>
                 </div>
-                <a href="#" class="navbar-item has-divider desktop-icon-only">
+                <a @click.prevent="openPdf()" class="navbar-item has-divider desktop-icon-only cursor-pointer">
                     <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
                     <span>About</span>
                 </a>

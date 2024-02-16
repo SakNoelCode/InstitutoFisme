@@ -15,6 +15,10 @@ const toogleDropDown = () => {
         dropdownIcon.classList.toggle('mdi-minus');
     }
 }
+
+const openPdf = () => {
+    window.open('/manual-pdf', '_blank');
+}
 </script>
 
 <template>
@@ -29,38 +33,38 @@ const toogleDropDown = () => {
             <ul class="menu-list">
                 <li class="--set-active-index-html">
                     <Link :href="route('dashboard')">
-                        <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                        <span class="menu-item-label">Dashboard</span>
+                    <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+                    <span class="menu-item-label">Dashboard</span>
                     </Link>
                 </li>
             </ul>
-            <p class="menu-label">Módulos</p>
+            <p class="menu-label">Menu</p>
             <ul class="menu-list">
                 <li class="--set-active-tables-html">
-                    <Link :href="route('posts.index')"> 
-                        <span class="icon"><span class="mdi mdi-post"></span></span>
-                        <span class="menu-item-label">Posts</span>
+                    <Link :href="route('posts.index')">
+                    <span class="icon"><span class="mdi mdi-post"></span></span>
+                    <span class="menu-item-label">Posts</span>
                     </Link>
                 </li>
 
                 <li class="">
-                    <Link :href="route('cursos.index')"> 
-                        <span class="icon"><span class="mdi mdi-book"></span></span>
-                        <span class="menu-item-label">cursos</span>
+                    <Link :href="route('cursos.index')">
+                    <span class="icon"><span class="mdi mdi-book"></span></span>
+                    <span class="menu-item-label">cursos</span>
                     </Link>
                 </li>
 
                 <li class="">
-                    <Link :href="route('equipamientos.index')"> 
-                        <span class="icon"><span class="mdi mdi-tools"></span></span>
-                        <span class="menu-item-label">Equipamiento</span>
+                    <Link :href="route('equipamientos.index')">
+                    <span class="icon"><span class="mdi mdi-tools"></span></span>
+                    <span class="menu-item-label">Equipamiento</span>
                     </Link>
                 </li>
 
                 <li class="">
-                    <Link :href="route('egresados.index')"> 
-                        <span class="icon"><span class="mdi mdi-account-group-outline"></span></span>
-                        <span class="menu-item-label">Egresados</span>
+                    <Link :href="route('egresados.index')">
+                    <span class="icon"><span class="mdi mdi-account-group-outline"></span></span>
+                    <span class="menu-item-label">Egresados</span>
                     </Link>
                 </li>
                 <!--li class="--set-active-forms-html">
@@ -104,9 +108,9 @@ const toogleDropDown = () => {
             <p class="menu-label">Acerca de</p>
             <ul class="menu-list">
                 <li>
-                    <a href="#" class="has-icon">
+                    <a @click.prevent="openPdf()" class="has-icon cursor-pointer">
                         <span class="icon"><i class="mdi mdi-help-circle"></i></span>
-                        <span class="menu-item-label">FAQ</span>
+                        <span class="menu-item-label">Manual</span>
                     </a>
                 </li>
                 <!--li>

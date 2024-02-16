@@ -88,7 +88,7 @@ const fechaFin = computed(() => {
                         </p>
 
                         <p class="pb-2">
-                            <span class="font-semibold">Inscripciones: </span> <a target="_blank" :href="url"><span class="mdi mdi-format-color-highlight"></span></a>
+                            <span class="font-semibold"><a target="_blank" :href="url">Inscríbete aquí<span class="mdi mdi-format-color-highlight"></span></a></span> 
                         </p>
                         
 
@@ -142,6 +142,9 @@ const fechaFin = computed(() => {
                         </p>
                         <p class="pb-2">
                             <span class="font-semibold">Fecha Fin:</span> {{ fechaFin }}
+                        </p>
+                        <p class="pb-2">
+                            <span class="font-semibold"><a target="_blank" :href="url">Inscríbete aquí<span class="mdi mdi-format-color-highlight"></span></a></span> 
                         </p>
 
                     </div>

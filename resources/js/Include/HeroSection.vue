@@ -1,4 +1,5 @@
-<script>
+<script setup>
+import { Link } from '@inertiajs/vue3'
 </script>
 
 <template>
@@ -18,12 +19,12 @@
                         </p>
                         <ul class="flex flex-wrap items-center">
                             <li>
-                                <a href="javascript:void(0)"
+                                <Link :href="route('login')"
                                     class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10">
-                                    Comienza aquí
-                                </a>
+                                Inicia sesión
+                                </Link>
                             </li>
-                            <li>
+                            <!---li>
                                 <a href="javascript:void(0)"
                                     class="inline-flex items-center justify-center py-4 px-6 text-center text-base font-normal text-body-color hover:text-primary sm:px-10 lg:px-8 xl:px-10">
                                     <span class="mr-2">
@@ -37,7 +38,7 @@
                                     </span>
                                     Leer más
                                 </a>
-                            </li>
+                            </li--->
                         </ul>
                         <div class="clients pt-16">
                             <h6 class="mb-2 flex items-center text-xs font-normal text-body-color">
