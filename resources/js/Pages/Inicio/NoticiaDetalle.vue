@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from '@/Layouts/Inicio/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
+import { computed } from 'vue';
 
 const props = defineProps({
     post: Object,
@@ -8,6 +9,18 @@ const props = defineProps({
     imgAutor: String,
     posts: Array
 })
+
+
+const fecha = computed(() => {
+    const fecha = props.post.created_at;
+
+    const dia = fecha.split('/')[0];
+    const mes = fecha.split('/')[1];
+    const año = fecha.split('/')[2];
+
+
+    return `${dia - 1}/${mes}/${año}`;
+});
 
 </script>
  
@@ -63,14 +76,15 @@ const props = defineProps({
                             <address class="flex items-center mb-6 not-italic">
                                 <div class="inline-flex items-center mr-3 text-sm text-gray-900">
                                     <img class="mr-4 w-16 h-16 rounded-full"
-                                        src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="Autor">
+                                        src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png"
+                                        alt="Autor">
                                     <div>
                                         <a href="#" rel="author" class="text-xl font-bold text-gray-900">
                                             {{ post.autor }}
                                         </a>
                                         <p class="text-base text-gray-500">
                                             <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                                                {{ post.created_at }}
+                                                {{ fecha }}
                                             </time>
                                         </p>
                                     </div>
@@ -85,7 +99,7 @@ const props = defineProps({
                         <p class="text-lg text-body-color my-10">
                             {{ post.contenido }}
                         </p>
-                        <figure class="flex justify-center md:justify-start" >
+                        <figure class="flex justify-center md:justify-start">
                             <img :src="imgPost" :alt="post.titulo">
                         </figure>
 
@@ -97,8 +111,8 @@ const props = defineProps({
 
                     <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                         <p class="text-xl font-semibold pb-5">Últimas noticias:</p>
-                        <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-3"
-                            v-for="item in posts" :key="item.id">
+                        <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-3" v-for="item in posts"
+                            :key="item.id">
                             <Link :href="route('inicio.detalleNoticia', item.id)">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                 {{ item.titulo }}
