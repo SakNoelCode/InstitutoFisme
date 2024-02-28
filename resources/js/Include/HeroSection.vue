@@ -18,7 +18,7 @@ import { Link } from '@inertiajs/vue3'
                             Aquí, la tecnología cobra vida y las posibilidades son infinitas.
                         </p>
                         <ul class="flex flex-wrap items-center">
-                            <li>
+                            <li class="sm:hidden">
                                 <Link :href="route('login')"
                                     class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-6 text-center text-base font-normal text-white hover:bg-opacity-90 sm:px-10 lg:px-8 xl:px-10">
                                 Inicia sesión
@@ -40,7 +40,7 @@ import { Link } from '@inertiajs/vue3'
                                 </a>
                             </li--->
                         </ul>
-                        <div class="clients pt-16">
+                        <div class="clients pt-8">
                             <h6 class="mb-2 flex items-center text-xs font-normal text-body-color">
                                 Respaldado por nuestras instituciones
                                 <span class="ml-2 inline-block h-[1px] w-8 bg-body-color"></span>

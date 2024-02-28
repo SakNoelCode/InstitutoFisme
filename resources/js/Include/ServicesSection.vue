@@ -1,4 +1,5 @@
-<script>
+<script setup>
+import { Link } from '@inertiajs/vue3'
 </script>
 
 <template>
@@ -190,9 +191,9 @@
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
                     <div class="mt-10 lg:mt-0">
-                        <span class="mb-2 block text-lg font-semibold text-primary">
+                        <!--span class="mb-2 block text-lg font-semibold text-primary">
                             Conoce más
-                        </span>
+                        </span--->
                         <h2 class="mb-8 text-3xl font-bold text-dark sm:text-4xl">
                             ¡Bienvenidos a la Universidad Nacional Toribio Rodríguez de Mendoza!
                         </h2>
@@ -208,10 +209,12 @@
                             también contamos con los versátiles dispositivos Arduino, estimulando tu
                             creatividad y habilidades prácticas.
                         </p>
-                        <!---a href="javascript:void(0)"
-                            class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-10 text-center text-base font-normal text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
-                            Comenzar ahora
-                        </a---->
+                        <div class="text-center">
+                            <Link :href="route('inicio.nosotros')"
+                                class="inline-flex items-center justify-center rounded-lg bg-primary py-4 px-10 text-center text-base font-normal text-white hover:bg-opacity-90 lg:px-8 xl:px-10">
+                            Conoce más
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
