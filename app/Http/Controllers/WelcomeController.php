@@ -40,6 +40,7 @@ class welcomeController extends Controller
     public function showEquipamiento()
     {
         $equipos = EquipamientoResource::collection(Equipamiento::latest()->paginate(8));
+        //dd($equipos);
         return Inertia::render('Inicio/Equipamiento', ['equipos' => $equipos]);
     }
 

@@ -9,7 +9,13 @@ const props = defineProps({
 const showCustomModal = () => {
   Swal.fire({
     title: props.nombre,
-    text: props.descripcion,
+    html: 
+    `
+    <div style="white-space: pre-line;">
+        ${props.descripcion}
+        </div>
+  `
+    ,
     imageUrl: 'storage/'+ props.imagen,
     imageWidth: 400,
     imageHeight: 200,
@@ -37,7 +43,6 @@ const showCustomModal = () => {
                     class="inline-block rounded-md border py-3 px-7 text-sm font-semibold text-body-color transition hover:border-primary hover:bg-primary hover:text-white">
                     Ver detalles
                 </button>
-
             </div>
         </div>
     </div>

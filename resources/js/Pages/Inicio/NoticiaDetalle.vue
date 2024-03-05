@@ -90,16 +90,16 @@ const fecha = computed(() => {
                                     </div>
                                 </div>
                             </address>
-                            <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
+                            <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-justify">
                                 {{ post.titulo }}
                             </h1>
 
                         </header>
 
-                        <p class="text-lg text-body-color my-10">
+                        <p class="text-lg text-body-color my-10 text-justify">
                             {{ post.contenido }}
                         </p>
-                        <figure class="flex justify-center md:justify-start">
+                        <figure class="flex justify-center">
                             <img :src="imgPost" :alt="post.titulo">
                         </figure>
 
