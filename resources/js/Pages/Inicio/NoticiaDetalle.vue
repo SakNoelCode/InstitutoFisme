@@ -1,7 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/Inicio/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
-import { computed } from 'vue';
 
 const props = defineProps({
     post: Object,
@@ -10,20 +9,8 @@ const props = defineProps({
     posts: Array
 })
 
-
-const fecha = computed(() => {
-    const fecha = props.post.created_at;
-
-    const dia = fecha.split('/')[0];
-    const mes = fecha.split('/')[1];
-    const año = fecha.split('/')[2];
-
-
-    return `${dia - 1}/${mes}/${año}`;
-});
-
 </script>
- 
+
 <template>
     <AppLayout title="Detalles de la noticia">
 
@@ -47,7 +34,7 @@ const fecha = computed(() => {
                         <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow mb-3"
                             v-for="item in posts" :key="item.id">
                             <Link :href="route('inicio.detalleNoticia', item.id)">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 overflow-hidden">
                                 {{ item.titulo }}
                             </h5>
                             </Link>
@@ -59,8 +46,8 @@ const fecha = computed(() => {
                             Leer más
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                             </svg>
                             </Link>
                         </div>
@@ -84,13 +71,14 @@ const fecha = computed(() => {
                                         </a>
                                         <p class="text-base text-gray-500">
                                             <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                                                {{ fecha }}
+                                                {{ post.created_at }}
                                             </time>
                                         </p>
                                     </div>
                                 </div>
                             </address>
-                            <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-justify">
+                            <h1
+                                class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl text-justify">
                                 {{ post.titulo }}
                             </h1>
 
@@ -111,8 +99,8 @@ const fecha = computed(() => {
 
                     <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                         <p class="text-xl font-semibold pb-5">Últimas noticias:</p>
-                        <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-3" v-for="item in posts"
-                            :key="item.id">
+                        <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-3"
+                            v-for="item in posts" :key="item.id">
                             <Link :href="route('inicio.detalleNoticia', item.id)">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                                 {{ item.titulo }}
@@ -126,8 +114,8 @@ const fecha = computed(() => {
                             Leer más
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                             </svg>
                             </Link>
                         </div>

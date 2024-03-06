@@ -27,7 +27,7 @@ const fechaInicio = computed(() => {
     const mesConCeros = mes.toString().padStart(2, '0');
     const diaConCeros = dia.toString().padStart(2, '0');
 
-    const fechaFormateada = `${diaConCeros}-${mesConCeros}-${year}`;
+    const fechaFormateada = `${diaConCeros}/${mesConCeros}/${year}`;
     return fechaFormateada;
 })
 
@@ -42,7 +42,7 @@ const fechaFin = computed(() => {
     const mesConCeros = mes.toString().padStart(2, '0');
     const diaConCeros = dia.toString().padStart(2, '0');
 
-    const fechaFormateada = `${diaConCeros}-${mesConCeros}-${year}`;
+    const fechaFormateada = `${diaConCeros}/${mesConCeros}/${year}`;
     return fechaFormateada;
 })
 </script>

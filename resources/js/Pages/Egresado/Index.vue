@@ -6,17 +6,45 @@ import NotificationFail from '@/Components/NotificationFaill.vue';
 import Pagination from '@/Components/Pagination.vue';
 import HeaderSection from '@/Components/HeaderSection.vue';
 import EmptyTable from '@/Components/EmptyTable.vue';
+import { useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
     egresados: Object
 })
+
+const showDeleteModal = (id) => {
+    Swal.fire({
+        title: "Seguro que quieres eliminar el registro?",
+        showDenyButton: true,
+        //  showCancelButton: true,
+        confirmButtonText: "Confirmar",
+        denyButtonText: `Cancelar`
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            deleteRegister(id);
+            Swal.fire("Eliminado", "", "success");
+        }
+        //deleteCurso(id);
+    });
+};
+
+const deleteRegister = (id) => {
+    form.post(route('egresados.destroy', id));
+}
+
+const form = useForm({
+    _method: 'DELETE',
+});
+
 </script>
 
 <template>
     <AppLayout title="Egresados">
 
         <!--Header section-->
-        <HeaderSection :icon="'mdi mdi-pencil'" :textIcon="'Crear nuevo egresado'" :hrefIcon="route('egresados.create')">
+        <HeaderSection :icon="'mdi mdi-pencil'" :textIcon="'Crear nuevo egresado'"
+            :hrefIcon="route('egresados.create')">
             <li>Egresados</li>
         </HeaderSection>
 
@@ -28,7 +56,7 @@ const props = defineProps({
             <NotificationSuccess :message="$page.props.flash.message" />
 
             <!---Notificacion Fail-->
-            <NotificationFail :message="$page.props.flash.error" />
+            <!----NotificationFail :message="$page.props.flash.error" /---->
 
             <!---Tabla con elementos-->
             <div class="card has-table" v-if="egresados.data.length">
@@ -66,10 +94,9 @@ const props = defineProps({
                                     <span class="icon"><i class="mdi mdi-eye"></i></span>
                                 </button---->
                                         <!---Eliminar-->
-                                        <Link :href="route('egresados.destroy', item.id)" class="button small red" as="button"
-                                            method="delete">
-                                        <span class="icon"><span class="mdi mdi-delete-empty"></span></span>
-                                        </Link>
+                                        <button class="button small red" @click="showDeleteModal(item.id)">
+                                            <span class="icon"><span class="mdi mdi-delete-empty"></span></span>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

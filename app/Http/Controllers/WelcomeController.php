@@ -34,6 +34,7 @@ class welcomeController extends Controller
     {
         $imgPost = asset('storage/' . $post->img_path);
         $posts = Post::latest()->take(2)->get();
+       // dd($post);
         return Inertia::render('Inicio/NoticiaDetalle', ['post' => $post, 'imgPost' => $imgPost, 'posts' => $posts]);
     }
 

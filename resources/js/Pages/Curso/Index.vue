@@ -6,10 +6,36 @@ import NotificationFail from '@/Components/NotificationFaill.vue';
 import Pagination from '@/Components/Pagination.vue';
 import HeaderSection from '@/Components/HeaderSection.vue';
 import EmptyTable from '@/Components/EmptyTable.vue';
+import { useForm } from '@inertiajs/vue3';
 
 const props = defineProps({
     cursos: Object
 })
+
+const showDeleteModal = (id) => {
+    Swal.fire({
+        title: "Seguro que quieres eliminar el registro?",
+        showDenyButton: true,
+        //  showCancelButton: true,
+        confirmButtonText: "Confirmar",
+        denyButtonText: `Cancelar`
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            deleteCurso(id);
+            Swal.fire("Eliminado", "", "success");
+        }
+        //deleteCurso(id);
+    });
+};
+
+const deleteCurso = (id) => {
+    form.post(route('cursos.destroy', id));
+}
+
+const form = useForm({
+    _method: 'DELETE',
+});
 
 </script>
 
@@ -29,7 +55,7 @@ const props = defineProps({
             <NotificationSuccess :message="$page.props.flash.message" />
 
             <!---Notificacion Fail-->
-            <NotificationFail :message="$page.props.flash.error" />
+            <!--NotificationFail :message="$page.props.flash.error" /---->
 
             <!---Tabla con elementos-->
             <div class="card has-table" v-if="cursos.data.length">
@@ -79,10 +105,10 @@ const props = defineProps({
                                             <span class="icon"><i class="mdi mdi-eye"></i></span>
                                         </button---->
                                         <!---Eliminar-->
-                                        <Link :href="route('cursos.destroy', curso.id)" class="button small red" as="button"
-                                            method="delete">
-                                        <span class="icon"><span class="mdi mdi-delete-empty"></span></span>
-                                        </Link>
+                                        <button class="button small red" @click="showDeleteModal(curso.id)">
+                                            <span class="icon"><span class="mdi mdi-delete-empty"></span></span>
+                                        </button>
+
                                     </div>
                                 </td>
                             </tr>
